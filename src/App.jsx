@@ -8,6 +8,7 @@ import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
 // Page imports
 import Layout from "@/components/Layout";
+// eslint-disable-next-line no-unused-vars
 import Home from "./pages/Home";
 import Bulletins from "./pages/Bulletins";
 import BulletinDetail from "./pages/BulletinDetail";
