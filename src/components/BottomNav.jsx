@@ -14,7 +14,7 @@ export default function BottomNav() {
   return (
     <nav
       aria-label="ניווט ראשי"
-      className="pb-safe fixed inset-x-3 bottom-3 z-40 md:hidden"
+      className="pb-safe fixed inset-x-3 bottom-3 z-40"
     >
       <div
         className="glass-surface mx-auto flex max-w-md items-center rounded-full px-1.5 py-1.5 shadow-[var(--shadow-float-lg)]"

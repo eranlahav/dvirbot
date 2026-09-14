@@ -1,13 +1,11 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
-import Header from "@/components/Header";
 import BottomNav from "@/components/BottomNav";
 import { NAV_LINKS } from "@/components/Header";
 
 export default function Layout() {
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
       <main className="flex-1 pb-6 md:pb-10">
         <Outlet />
       </main>
