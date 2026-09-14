@@ -32,9 +32,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-5">
-      {/* Hero */}
-      <section className="relative h-72 overflow-hidden rounded-b-[2rem] rounded-t-2xl sm:h-96" aria-label="פתיח">
+    <div>
+      {/* Hero — full-bleed, flush with the top of the page */}
+      <section className="relative h-72 overflow-hidden rounded-b-[2rem] sm:h-96" aria-label="פתיח">
         <Image
           src={HERO_IMAGE}
           alt="קיבוץ דביר"
@@ -53,6 +53,7 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="mx-auto max-w-5xl px-4 pb-5">
       {/* Latest bulletin — simple icon card, floating over the hero */}
       {latestBulletin && (
         <Link
@@ -124,6 +125,7 @@ export default function Home() {
           דברו איתי
         </Link>
       </section>
+      </div>
     </div>
   );
 }

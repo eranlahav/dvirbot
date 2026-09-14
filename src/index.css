@@ -62,6 +62,17 @@
     scroll-behavior: smooth;
   }
 
+  /* Hide scrollbar chrome on all platforms (scrolling still works) */
+  html,
+  body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
