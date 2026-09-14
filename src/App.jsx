@@ -8,12 +8,12 @@ import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
 // Page imports
 import Layout from "@/components/Layout";
-import Home from "@/pages/Home";
-import Bulletins from "@/pages/Bulletins";
-import BulletinDetail from "@/pages/BulletinDetail";
-import Updates from "@/pages/Updates";
-import Gallery from "@/pages/Gallery";
-import StaticPageView from "@/pages/StaticPageView";
+import Home from "./pages/Home";
+import Bulletins from "./pages/Bulletins";
+import BulletinDetail from "./pages/BulletinDetail";
+import Updates from "./pages/Updates";
+import Gallery from "./pages/Gallery";
+import StaticPageView from "./pages/StaticPageView";
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
