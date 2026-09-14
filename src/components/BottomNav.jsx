@@ -14,22 +14,28 @@ export default function BottomNav() {
   return (
     <nav
       aria-label="ניווט ראשי"
-      className="pb-safe fixed inset-x-0 bottom-0 z-40 border-t border-border/60 bg-background/90 backdrop-blur-md md:hidden"
+      className="pb-safe fixed inset-x-3 bottom-3 z-40 md:hidden"
     >
-      <div className="mx-auto flex max-w-md items-stretch justify-between px-2">
+      <div
+        className="glass-surface mx-auto flex max-w-md items-center rounded-full px-1.5 py-1.5 shadow-[var(--shadow-float-lg)]"
+      >
         {ITEMS.map(({ label, path, icon: Icon, exact }) => (
           <NavLink
             key={path}
             to={path}
             end={exact || path === "/"}
-            className={({ isActive }) =>
-              `flex min-h-[56px] min-w-[60px] flex-1 flex-col items-center justify-center gap-1 rounded-lg py-1.5 text-xs font-medium transition-colors ${
-                isActive ? "text-accent" : "text-foreground/60"
-              }`
-            }
+            aria-label={label}
+            className="flex flex-1 items-center justify-center py-1.5"
           >
-            <Icon size={22} strokeWidth={1.9} aria-hidden="true" />
-            <span>{label}</span>
+            {({ isActive }) => (
+              <span
+                className={`flex h-11 w-11 items-center justify-center rounded-full transition-colors ${
+                  isActive ? "bg-foreground text-background" : "text-muted-foreground"
+                }`}
+              >
+                <Icon size={20} strokeWidth={1.8} aria-hidden="true" />
+              </span>
+            )}
           </NavLink>
         ))}
       </div>

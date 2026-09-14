@@ -12,8 +12,8 @@ export const NAV_LINKS = [
 export function LogoMark({ className = "h-9 w-9" }) {
   return (
     <svg viewBox="0 0 64 64" className={className} aria-hidden="true">
-      <rect width="64" height="64" rx="14" className="fill-primary" />
-      <g stroke="hsl(40 45% 97%)" strokeWidth="4" strokeLinecap="round" fill="none">
+      <rect width="64" height="64" rx="18" className="fill-primary" />
+      <g stroke="hsl(0 0% 100%)" strokeWidth="4" strokeLinecap="round" fill="none">
         <path d="M32 52 V20" />
         <path d="M32 28 C 24 26 20 20 20 12 C 28 14 32 20 32 26" />
         <path d="M32 28 C 40 26 44 20 44 12 C 36 14 32 20 32 26" />
@@ -31,7 +31,7 @@ export default function Header() {
         <Link to="/" className="flex items-center gap-2.5" aria-label="דבירבוט — דף הבית">
           <LogoMark />
           <span className="flex flex-col leading-none">
-            <span className="font-heading text-2xl font-semibold text-primary">דבירבוט</span>
+            <span className="font-heading text-2xl font-bold text-primary">דבירבוט</span>
             <span className="mt-0.5 text-xs text-muted-foreground">כל מה שקורה בדביר</span>
           </span>
         </Link>
@@ -42,7 +42,7 @@ export default function Header() {
               to={link.path}
               end={link.path === "/"}
               className={({ isActive }) =>
-                `rounded-lg px-4 py-2.5 text-base font-medium transition-colors ${
+                `rounded-full px-4 py-2.5 text-base font-medium transition-colors ${
                   isActive ? "bg-primary/10 text-primary" : "text-foreground/75 hover:text-primary"
                 }`
               }

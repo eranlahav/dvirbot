@@ -15,6 +15,7 @@ import BulletinDetail from "./pages/BulletinDetail";
 import Updates from "./pages/Updates";
 import Gallery from "./pages/Gallery";
 import StaticPageView from "./pages/StaticPageView";
+import Chat from "./pages/Chat";
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -49,6 +50,7 @@ const AuthenticatedApp = () => {
         <Route path="/updates" element={<Updates />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/pages/:slug" element={<StaticPageView />} />
+        <Route path="/chat" element={<Chat />} />
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>

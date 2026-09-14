@@ -4,44 +4,51 @@
 
 @layer base {
   :root {
-    /* Desert Bloom palette */
-    --background: 36 43% 93%;       /* Warm Parchment #F4EFE6 */
-    --foreground: 27 8% 16%;        /* Off-Black Ink #2D2926 */
-    --card: 38 46% 97%;             /* Soft Parchment #FBF8F2 */
-    --card-foreground: 27 8% 16%;
-    --popover: 38 46% 97%;
-    --popover-foreground: 27 8% 16%;
-    --primary: 133 11% 33%;         /* Deep Moss Green #4A5D4E */
-    --primary-foreground: 40 45% 97%;
-    --secondary: 133 8% 42%;         /* Lighter Moss */
-    --secondary-foreground: 40 45% 97%;
-    --muted: 36 26% 88%;
-    --muted-foreground: 27 8% 38%;
-    --accent: 25 55% 52%;           /* Earthy Clay Terracotta #C87941 */
-    --accent-foreground: 40 45% 97%;
+    /* Light Glass palette — warm parchment ground, terracotta as the brand accent
+       (promoted from Desert Bloom's old --accent), a single purple reserved for
+       the AI-assistant entry point, ink-black for text and solid CTAs. */
+    --background: 45 40% 98%;       /* Warm off-white #FCFBF8 */
+    --foreground: 214 14% 10%;      /* Ink #15181C */
+    --card: 0 0% 100%;              /* White #FFFFFF */
+    --card-foreground: 214 14% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 214 14% 10%;
+    --primary: 25 55% 52%;          /* Terracotta #C87941 — links, icons, active states */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 37 35% 93%;        /* Warm chip/tint background #F3EEE6 */
+    --secondary-foreground: 214 14% 10%;
+    --muted: 37 35% 93%;
+    --muted-foreground: 244 6% 44%; /* #6B6A78 */
+    --accent: 240 87% 69%;          /* Purple #6C6BF5 — reserved for the chat entry point */
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 62% 42%;
     --destructive-foreground: 40 45% 97%;
-    --border: 36 26% 84%;
-    --input: 36 26% 84%;
+    --border: 38 34% 87%;           /* #EAE2D4 */
+    --input: 38 34% 87%;
     --ring: 25 55% 52%;             /* Terracotta focus ring */
-    --chart-1: 133 11% 33%;
-    --chart-2: 25 55% 52%;
-    --chart-3: 43 60% 55%;
+    --chart-1: 25 55% 52%;
+    --chart-2: 240 87% 69%;
+    --chart-3: 32 68% 63%;
     --chart-4: 197 37% 45%;
-    --chart-5: 27 8% 30%;
-    --radius: 0.75rem;
-    --font-heading: 'David Libre', 'Frank Ruhl CLM', serif;
-    --font-body: 'Assistant', 'Segoe UI', sans-serif;
-    --font-display: 'David Libre', 'Frank Ruhl CLM', serif;
+    --chart-5: 214 14% 10%;
+    --radius: 1.125rem;
+    --font-heading: 'Alef', sans-serif;
+    --font-body: 'Alef', sans-serif;
+    --font-display: 'Alef', sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    --sidebar-background: 38 46% 97%;
-    --sidebar-foreground: 27 8% 22%;
-    --sidebar-primary: 133 11% 33%;
-    --sidebar-primary-foreground: 40 45% 97%;
-    --sidebar-accent: 36 30% 90%;
-    --sidebar-accent-foreground: 27 8% 22%;
-    --sidebar-border: 36 26% 84%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 214 14% 16%;
+    --sidebar-primary: 25 55% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 37 35% 93%;
+    --sidebar-accent-foreground: 214 14% 16%;
+    --sidebar-border: 38 34% 87%;
     --sidebar-ring: 25 55% 52%;
+
+    /* Extra tokens for the glass/floating card language (not part of the
+       shadcn set above, used directly as arbitrary-value fallbacks) */
+    --shadow-float: 0 16px 32px -14px rgb(30 20 10 / 0.22);
+    --shadow-float-lg: 0 20px 40px -16px rgb(30 20 10 / 0.28);
   }
 }
 
@@ -67,7 +74,7 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    @apply text-primary;
+    font-weight: 700;
     line-height: 1.25;
   }
 
@@ -76,13 +83,26 @@
   button:focus-visible,
   input:focus-visible,
   [tabindex]:focus-visible {
-    outline: 2px solid hsl(var(--accent));
+    outline: 2px solid hsl(var(--primary));
     outline-offset: 2px;
     border-radius: 4px;
   }
 }
 
 @layer components {
+  /* Floating frosted-glass surface (bottom nav, overlapping cards) */
+  .glass-surface {
+    background: rgb(255 255 255 / 0.8);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgb(255 255 255 / 0.6);
+  }
+
+  /* Purple gradient reserved for the AI-assistant entry point */
+  .cta-gradient {
+    background-image: linear-gradient(120deg, #7A6AF0, #5B4BD8);
+  }
+
   .drop-cap::first-letter {
     font-family: var(--font-display);
     float: right;
@@ -91,7 +111,7 @@
     margin-left: 0.5rem;
     margin-top: 0.35rem;
     color: hsl(var(--primary));
-    font-weight: 600;
+    font-weight: 700;
   }
 
   .grain-overlay {
