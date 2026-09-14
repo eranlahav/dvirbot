@@ -6,7 +6,7 @@ import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
-// Add page imports here
+// Page imports
 import Layout from "@/components/Layout";
 import Home from "@/pages/Home";
 import Bulletins from "@/pages/Bulletins";
