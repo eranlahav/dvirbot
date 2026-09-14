@@ -1,0 +1,35 @@
+{
+  "name": "PhotoAlbum",
+  "title": "\u05d0\u05dc\u05d1\u05d5\u05dd \u05ea\u05de\u05d5\u05e0\u05d5\u05ea",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "\u05db\u05d5\u05ea\u05e8\u05ea"
+    },
+    "description": {
+      "type": "string",
+      "title": "\u05ea\u05d9\u05d0\u05d5\u05e8"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "title": "\u05ea\u05d0\u05e8\u05d9\u05da"
+    },
+    "cover_image": {
+      "type": "string",
+      "title": "\u05ea\u05de\u05d5\u05e0\u05ea \u05e9\u05e2\u05e8"
+    },
+    "photos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "\u05ea\u05de\u05d5\u05e0\u05d5\u05ea"
+    }
+  },
+  "required": [
+    "title",
+    "date"
+  ]
+}

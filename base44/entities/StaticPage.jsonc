@@ -1,0 +1,43 @@
+{
+  "name": "StaticPage",
+  "title": "\u05d3\u05e3 \u05de\u05d9\u05d3\u05e2",
+  "type": "object",
+  "properties": {
+    "slug": {
+      "type": "string",
+      "title": "\u05de\u05d6\u05d4\u05d4 \u05d9\u05d9\u05d7\u05d5\u05d3\u05d9"
+    },
+    "title": {
+      "type": "string",
+      "title": "\u05db\u05d5\u05ea\u05e8\u05ea"
+    },
+    "subtitle": {
+      "type": "string",
+      "title": "\u05ea\u05ea-\u05db\u05d5\u05ea\u05e8\u05ea"
+    },
+    "body": {
+      "type": "string",
+      "title": "\u05ea\u05d5\u05db\u05df (Markdown)"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "about",
+        "history",
+        "community",
+        "contact"
+      ],
+      "title": "\u05e7\u05d8\u05d2\u05d5\u05e8\u05d9\u05d4"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0,
+      "title": "\u05e1\u05d3\u05e8 \u05ea\u05e6\u05d5\u05d2\u05d4"
+    }
+  },
+  "required": [
+    "slug",
+    "title",
+    "body"
+  ]
+}

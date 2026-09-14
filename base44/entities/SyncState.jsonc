@@ -1,0 +1,19 @@
+{
+  "name": "SyncState",
+  "title": "\u05de\u05e6\u05d1 \u05e1\u05e0\u05db\u05e8\u05d5\u05df",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "\u05e9\u05dd"
+    },
+    "page_token": {
+      "type": "string",
+      "title": "Page Token"
+    }
+  },
+  "required": [
+    "name",
+    "page_token"
+  ]
+}
