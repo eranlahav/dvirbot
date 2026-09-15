@@ -92,7 +92,7 @@ export default function Home() {
         ) : updates.length === 0 ? (
           <p className="mt-4 text-muted-foreground">אין עדכונים חדשים כרגע</p>
         ) : (
-          <div className="mt-4 flex snap-x gap-4 overflow-x-auto pb-2">
+          <div className="-ml-4 mt-4 flex snap-x gap-4 overflow-x-auto pb-2">
             {updates.map((u) => (
               <Link
                 key={u.id}
