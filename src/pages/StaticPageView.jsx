@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { base44 } from "@/api/base44Client";
+import { Image } from "@/components/ui/image";
 import Loading from "@/components/Loading";
 
 export default function StaticPageView() {
@@ -40,6 +41,14 @@ export default function StaticPageView() {
     <div className="mx-auto max-w-2xl px-4 py-6">
       <h1 className="font-heading text-3xl font-bold sm:text-4xl">{page.title}</h1>
       {page.subtitle && <p className="mt-3 text-lg text-muted-foreground">{page.subtitle}</p>}
+      {page.image && (
+        <Image
+          src={page.image}
+          alt={page.title}
+          fittingType="fill"
+          className="mt-6 h-64 w-full rounded-3xl sm:h-80"
+        />
+      )}
       <hr className="mt-6 border-border/70" />
       <div className="reading-prose mt-6 text-lg">
         <ReactMarkdown>{page.body}</ReactMarkdown>
