@@ -43,7 +43,7 @@ export default function Home() {
           className="h-full w-full scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 p-5 sm:p-8">
+        <div className="absolute inset-x-0 bottom-0 p-5 pb-10 sm:p-8 sm:pb-12">
           <h1 className="font-heading text-4xl font-bold text-white drop-shadow-sm sm:text-5xl">
             {getGreeting()}
           </h1>
