@@ -47,7 +47,7 @@ export default function Home() {
           <h1 className="font-heading text-4xl font-bold text-white drop-shadow-sm sm:text-5xl">
             {getGreeting()}
           </h1>
-          <p className="mt-2 max-w-md text-lg text-white/90">
+          <p className="mt-1 max-w-md text-lg text-white/90">
             עלונים, עדכונים ותמונות מהקיבוץ — הכל במקום אחד
           </p>
         </div>
